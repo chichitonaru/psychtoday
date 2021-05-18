@@ -6,19 +6,24 @@ echo "==========================================================================
 echo "Activating psych-env Virtual Environment"
 source ../psych-env/bin/activate
 echo "<Beginning API Test Suite>"
+mkdir results
 echo "https://db.ygoprodeck.com/api-guide/"
 
 echo "[Test Card Database Version Endpoint]"
 pytest tests/test_card_database_version_endpoint.py -s | tee results/test_card_database_version_endpoint.log
-sleep 1.5s
+sleep 2.0s
 
 echo "[Test Card Archetypes Endpoint]"
 pytest tests/test_card_archetypes_endpoint.py -s | tee results/test_card_archetypes_endpoint.log
-sleep 1.5s
+sleep 2.0s
 
 echo "[Test Card Set Information Endpoint]"
 pytest tests/test_card_set_information_endpoint.py -s | tee results/test_card_set_information_endpoint.log
-sleep 1.5s
+sleep 2.0s
+
+echo "[Test Card Set List Endpoint]"
+pytest tests/test_card_set_list_endpoint.py -s | tee results/test_card_set_list_endpoint.log
+sleep 2.0s
 
 echo "Deactivating psych-env Virtual Environment"
 deactivate

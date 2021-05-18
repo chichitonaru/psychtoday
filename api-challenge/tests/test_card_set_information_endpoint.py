@@ -44,9 +44,20 @@ def test_get_card_set_information_invalid_parameter_error():
     print("Asserting 'error' in parsed JSON")
     assert 'error' in parsed
 
+def test_get_card_set_information_invalid_card_error():
+    print("\n[test_get_card_set_information_invalid_card_error]")
+    response = requests.get(endpoint, {'setcode': 'SDY-999'})
+    parsed = json.loads(response.content)
+
+    print("Asserting Status Code 400")
+    assert response.status_code == 400
+    print("Asserting 'error' in parsed JSON")
+    assert 'error' in parsed
+
 if __name__ == '__main__':
     test_get_card_set_information_specific()
     test_get_card_set_information_no_setcode_error()
     test_get_card_set_information_invalid_parameter_error()
+    test_get_card_set_information_invalid_card_error()
 
     print('END OF LINE.')
