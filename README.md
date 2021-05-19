@@ -46,8 +46,16 @@ chmod +x test_api.sh
   * **test_get_card_set_information_invalid_card_error**
     * This test verifies that an error is returned when a 'setcode' is sent that doesn't match an existing card is sent to the API.
 
-### 4. test_card_set_list_endpoint
+### 4. test_card_set_list_endpoint  
   * **test_get_all_card_sets**
     * This test verifies that the returned JSON of all the card sets contains the names of a handful of Yu-Gi-Oh card sets released throughout the game's 20+ year-old history. It also verifies that if more card sets are added (and not subtracted), the amount of sets should total over 860.
   * **test_get_all_card_sets_error**
     * In the API documentation, it is explained that the API will return an error if any GET parameters are sent to this endpoint, so I verify this by purposefully sending GET parameters and verifying I get an error message back with a 400 status code.
+
+### 5. test_random_card_endpoint  
+  * **test_get_random_card**
+    * This test obtains a random card from the random card endpoint and verifies that the card has an 'id', 'name', and 'desc'.
+  * **test_get_random_card_cross_reference**
+    * This test obtains a random card from the random card endpoint and then uses the 'id' from that random card to get the same card using the card info endpoint. The two cards are compared against each other to verify that the same card was obtained from both endpoints.
+  * **test_get_random_card_error**
+    * Similar to the test_card_database_version_error test, this test verifies that the API will return an error if any GET parameters are sent to this endpoint. I verify this by purposefully sending GET parameters and then checking I get an error message back with a 400 status code.
