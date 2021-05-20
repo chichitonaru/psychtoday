@@ -1,10 +1,5 @@
 import time
-import os
-import datetime
 from cdrive import ChromeDrive
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
-today = datetime.datetime.today().strftime('%m-%d-%Y')
 
 url = 'https://www.psychologytoday.com/us'
 

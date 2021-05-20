@@ -167,6 +167,17 @@ class ChromeDrive():
             self.teardown()
             return False
 
+    def wait_for_text_no_class(self, ele, text, to = 8):
+        xp = "//" + ele + "[text()=\'" + text +"\']"
+        print(str('Waiting for element@xpath: ' + xp))
+        try:
+            self.holdout(By.XPATH, xp, ho = to)
+            return True
+        except Exception as exception:
+            traceback.print_exc()
+            self.teardown()
+            return False
+
     def wait_for_text(self, ele, cls, text, to = 8):
         xp = "//" + ele + "[@class=\'" + cls + "\' and text()=\'" + text +"\']"
         print(str('Waiting for element@xpath: ' + xp))
