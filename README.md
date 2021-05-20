@@ -12,8 +12,12 @@ For these test suites to run, I have created a virtual environment that contains
 * Selenium
 * requests (python library)
 
+I have included the chromedriver for Mac in the repo, but it requires that Chrome be installed on the host system running the tests. The only setup that should be required to run the UI tests should be to have Chrome installed if it isn't already. If the Chrome on the host machine doesn't match the chromedriver I've included in the repo, the matching chromedriver will need to be downloaded on the host system, too.
+* Initially, I had planned to run the UI tests in Docker to alleviate these dependencies, but was having difficulty getting the tests to run inside the container.
+* I was able to spin up a container with the dependencies (Chrome, chromedriver, python, selenium, the test files, etc.), but the tests wouldn't run and output any results.
+
 ### Running the API Test Suite
-* In order to run the API Test Suite, from the root "psychtoday" folder, change directories to the "api challenge" folder and simply run the bash script:
+* In order to run the API Test Suite, from the root "psychtoday" folder, change directories to the "api_challenge" folder and simply run the bash script:
 ```bash
 ./test_api.sh
 ```
@@ -21,6 +25,17 @@ For these test suites to run, I have created a virtual environment that contains
 * If there is a permission denied error, the permissions may need to be changed so that the shell script can be executed:
 ```bash
 chmod +x test_api.sh
+```
+
+### Running the UI Test Suite
+* In order to run the UI Test Suite, from the root "psychtoday" folder, change directories to the "ui_challenge" folder and simply run the bash script:
+```bash
+./test_ui.sh
+```
+
+* If there is a permission denied error, the permissions may need to be changed so that the shell script can be executed:
+```bash
+chmod +x test_ui.sh
 ```
 
 ## Descriptions of API Test Cases
@@ -59,3 +74,12 @@ chmod +x test_api.sh
     * This test obtains a random card from the random card endpoint and then uses the 'id' from that random card to get the same card using the card info endpoint. The two cards are compared against each other to verify that the same card was obtained from both endpoints.
   * **test_get_random_card_error**
     * Similar to the test_card_database_version_error test, this test verifies that the API will return an error if any GET parameters are sent to this endpoint. I verify this by purposefully sending GET parameters and then checking I get an error message back with a 400 status code.
+
+## Descriptions of UI Test Cases  
+### 1. test_landing_page_smoke  
+  * **test_headers_and_links**
+    * This test checks for the presence of important headers and links found on the Psychology Today front page in the US.
+
+### 2. test_find_a_therapist  
+  * **test_therapist_search**
+    * This test does a simple check of searching for a city name and validates a search page is returned with the correct city and state with little information supplied to the engine.
