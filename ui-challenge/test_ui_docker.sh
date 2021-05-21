@@ -3,6 +3,8 @@
 # Author: George Mandella
 
 echo "================================================================================"
+echo "Activating psych-env Virtual Environment"
+source ../psych-env/bin/activate
 echo "Pulling Docker Image for selenium/standalone-chrome"
 docker pull selenium/standalone-chrome
 echo "Starting Docker selenium/standalone-chrome:latest"
@@ -24,5 +26,7 @@ echo "Killing Docker Image"
 docker kill $(docker ps -q)
 ecgo "Removing Docker Container"
 docker rm $(docker ps -a -q)
+echo "Deactivating psych-env Virtual Environment"
+deactivate
 echo "================================================================================"
 echo "END OF LINE."
