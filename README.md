@@ -13,7 +13,7 @@ For these test suites to run, I have created a virtual environment that contains
 * requests (python library)
 * Jinja2
 
-### Running the API Test Suite
+## Running the API Test Suite
 * In order to run the API Test Suite, from the root "psychtoday" folder, change directories to the "api_challenge" folder and simply run the bash script:
 ```bash
 ./test_api.sh
@@ -24,9 +24,9 @@ For these test suites to run, I have created a virtual environment that contains
 chmod +x test_api.sh
 ```
 
-* After the test suite has ran, an HTML report will be output to the "api_challenge" directory.
+* After the test suite has run, an HTML report will be output to the "api_challenge" directory.
 
-### Running the UI Test Suite
+## Running the UI Test Suite
 * In order to run the UI Test Suite, please verify Docker is installed on your machine, then from the root "psychtoday" folder, change directories to the "ui_challenge" folder and simply run the bash script:
 ```bash
 ./test_ui_docker.sh
@@ -37,7 +37,7 @@ chmod +x test_api.sh
 chmod +x test_ui_docker.sh
 ```
 
-* After the test suite has ran, an HTML report will be output to the "api_challenge" directory.
+* After the test suite has run, an HTML report will be output to the "api_challenge" directory.
 
 * The chromedriver and alternate test files were for debugging locally and can be run using a similar method to the above, but they require that Chrome is installed on the host machine with the matching version of chromedriver.
 
