@@ -87,3 +87,5 @@ chmod +x test_ui_docker.sh
     * This test does a simple search for Teletherapy for a city name and validates a search page is returned with the correct city and state.
   * **test_psychiatrist_search()**
     * This test does a simple search for Psychiatrists for a city name and validates a search page is returned with the correct city and state.
+  * **test_treatment_center_search()**
+    * This test does a simple search for Treatment Centers for a city name and validates a search page is returned with the correct city name and state.

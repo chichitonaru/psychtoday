@@ -61,10 +61,26 @@ def test_psychiatrist_search():
     time.sleep(1)
     driver.teardown()
 
+def test_treatment_center_search():
+    driver = RemoteDrive(url)
+    assert driver.wait_for_link('https://www.psychologytoday.com/us?tr=Hdr_Brand', 'Psychology Today')
+    assert driver.click_by_id('profClassSelectText')
+    assert driver.click_by_css_selector('#profClassMenu > span:nth-child(4)')
+    assert driver.type_by_id('autosuggestSearchInput', 'Snohomish')
+    assert driver.click_by_id('searchSubmit')
+
+    assert driver.get_url() == 'https://www.psychologytoday.com/us/treatment-rehab?search=Snohomish'
+    assert driver.wait_for_link('https://www.psychologytoday.com/us?tr=Hdr_Brand', 'Psychology Today')
+    assert driver.wait_for_text_no_class('h1', 'Treatment Centers in Snohomish, WA')
+
+    time.sleep(1)
+    driver.teardown()
+
 if __name__ == '__main__':
     test_therapist_search()
     test_therapist_search_no_results()
     test_teletherapy_search()
     test_psychiatrist_search()
+    test_treatment_center_search()
 
     print('END OF LINE.')
