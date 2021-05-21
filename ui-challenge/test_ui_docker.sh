@@ -24,7 +24,7 @@ sleep 2.0s
 
 echo "Killing Docker Image"
 docker kill $(docker ps -q)
-ecgo "Removing Docker Container"
+echo "Removing Docker Container"
 docker rm $(docker ps -a -q)
 echo "Deactivating psych-env Virtual Environment"
 deactivate
