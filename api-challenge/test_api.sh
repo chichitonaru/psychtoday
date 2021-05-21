@@ -30,6 +30,9 @@ echo "[Test Random Card Endpoint]"
 pytest tests/test_random_card_endpoint.py -s | tee results/test_random_card_endpoint.log
 sleep 2.0s
 
+echo "Building API Challenge Report"
+python build-report.py
+
 echo "Deactivating psych-env Virtual Environment"
 deactivate
 echo "================================================================================"
