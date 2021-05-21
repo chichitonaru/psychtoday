@@ -12,10 +12,6 @@ For these test suites to run, I have created a virtual environment that contains
 * Selenium
 * requests (python library)
 
-I have included the chromedriver for Mac in the repo, but it requires that Chrome be installed on the host system running the tests. The only setup that should be required to run the UI tests should be to have Chrome installed if it isn't already. If the Chrome on the host machine doesn't match the chromedriver I've included in the repo, the matching chromedriver will need to be downloaded on the host system, too.
-* Initially, I had planned to run the UI tests in Docker to alleviate these dependencies, but was having difficulty getting the tests to run inside the container.
-* I was able to spin up a container with the dependencies (Chrome, chromedriver, python, selenium, the test files, etc.), but the tests wouldn't run and output any results.
-
 ### Running the API Test Suite
 * In order to run the API Test Suite, from the root "psychtoday" folder, change directories to the "api_challenge" folder and simply run the bash script:
 ```bash
@@ -28,15 +24,17 @@ chmod +x test_api.sh
 ```
 
 ### Running the UI Test Suite
-* In order to run the UI Test Suite, from the root "psychtoday" folder, change directories to the "ui_challenge" folder and simply run the bash script:
+* In order to run the UI Test Suite, please verify Docker is installed on your machine, then from the root "psychtoday" folder, change directories to the "ui_challenge" folder and simply run the bash script:
 ```bash
-./test_ui.sh
+./test_ui_docker.sh
 ```
 
 * If there is a permission denied error, the permissions may need to be changed so that the shell script can be executed:
 ```bash
-chmod +x test_ui.sh
+chmod +x test_ui_docker.sh
 ```
+
+* The chromedriver and alternate test files were for debugging locally and can be run using a similar method to the above, but they require that Chrome is installed on the host machine with the matching version of chromedriver.
 
 ## Descriptions of API Test Cases
 ### 1. test_card_database_version_endpoint  
