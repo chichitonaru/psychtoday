@@ -76,7 +76,7 @@ chmod +x test_ui_docker.sh
 ## Descriptions of UI Test Cases  
 ### 1. test_landing_page_smoke.py  
   * **test_headers_and_links()**
-    * This test checks for the presence of important headers and links found on the Psychology Today front page in the US.
+    * This test checks for the presence of important headers and links found on the Psychology Today front page in the US.  
 
 ### 2. test_find_a_therapist.py  
   * **test_therapist_search()**
@@ -90,4 +90,10 @@ chmod +x test_ui_docker.sh
   * **test_treatment_center_search()**
     * This test does a simple search for Treatment Centers for a city name and validates a search page is returned with the correct city name and state.
   * **test_support_group_search()**
-    * This test does a simple search for Support Groups for a city name and validates a search page is returned with the correct city name and state.
+    * This test does a simple search for Support Groups for a city name and validates a search page is returned with the correct city name and state.  
+
+### 3. test_login.py
+  * **test_login_no_password()**
+    * This test does a simple check of attempting to log in without a password, verifying an error message is shown to the user.
+  * ** test_login_no_username()**
+    * This test does a simple check of attempting to log in without a username, verifying an error message is shown to the user.
