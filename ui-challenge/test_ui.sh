@@ -21,6 +21,9 @@ echo "[Test Psychology Today Login]"
 pytest tests/test_login.py -s | tee results/test_login.log
 sleep 2.0s
 
+echo "Building UI Challenge Report"
+python build-report.py
+
 echo "Deactivating psych-env Virtual Environment"
 deactivate
 echo "================================================================================"

@@ -30,6 +30,10 @@ echo "Killing Docker Image"
 docker kill $(docker ps -q)
 echo "Removing Docker Container"
 docker rm $(docker ps -a -q)
+
+echo "Building UI Challenge Report"
+python build-report.py
+
 echo "Deactivating psych-env Virtual Environment"
 deactivate
 echo "================================================================================"

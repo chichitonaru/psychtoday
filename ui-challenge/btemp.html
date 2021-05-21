@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI Challenge Test Results</title>
+<link rel="stylesheet" href="https://gitcdn.link/repo/Chalarangelo/mini.css/master/dist/mini-nord.min.css" />
+<style type="text/css">
+pre {margin-top:0}
+</style>
+</head>
+<body>
+
+<h1>UI Challenge Test Results</h1>
+<h3>{{ date }}</h3>
+
+<div class="collapse">
+    <!-- this will be for test reporting  -->
+    <input type="checkbox" id="collapse-tests" checked aria-hidden="true">
+    <!-- the "6" below is sum of "passed" -->
+    <label for="collapse-tests" aria-hidden="true"><mark>{{ numoftests }}</mark> Tests: <mark>{{ numofpasses }}</mark> passed, <mark>{{ numoffails }}</mark> failed</label>
+    <div>
+        <!-- output from "git diff --name-status dev..master" -->
+        <pre>{{ testresults }}</pre>
+    </div>
+
+    <!-- this will be for test reporting  -->
+    <input type="checkbox" id="collapse-test-output" checked aria-hidden="true">
+    <!-- the "6" below is sum of "passed" -->
+    <label for="collapse-test-output" aria-hidden="true">Test Output:</label>
+    <div>
+        <!-- output from "git diff --name-status dev..master" -->
+        <pre>{{ testoutput }}</pre>
+    </div>
+
+</div>
+</body>
+</html>
