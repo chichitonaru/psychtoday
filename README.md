@@ -95,5 +95,5 @@ chmod +x test_ui_docker.sh
 ### 3. test_login.py
   * **test_login_no_password()**
     * This test does a simple check of attempting to log in without a password, verifying an error message is shown to the user.
-  * ** test_login_no_username()**
+  * **test_login_no_username()**
     * This test does a simple check of attempting to log in without a username, verifying an error message is shown to the user.
