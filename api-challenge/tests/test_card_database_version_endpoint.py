@@ -10,8 +10,8 @@ def test_get_check_database_version():
 
     print("Asserting Status Code 200")
     assert response.status_code == 200
-    print("Asserting '20.' in parsed JSON")
-    assert '20.' in parsed[0]['database_version']
+    print("Asserting '21.' in parsed JSON")
+    assert '21.' in parsed[0]['database_version']
     print("Asserting '2021-05-' in parsed JSON")
     assert '2021-05-' in parsed[0]['last_update']
 
